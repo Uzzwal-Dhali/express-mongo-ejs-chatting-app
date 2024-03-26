@@ -1,0 +1,25 @@
+{
+  "name": "chating",
+  "version": "1.0.0",
+  "description": "Testing ",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon index.js",
+    "production": "NODE_ENV=production node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Uzzwal-Dhali/express-mongo-ejs-chatting-app.git"
+  },
+  "author": "Uzzwal Dhali",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.1",
+    "mongoose": "^8.2.3",
+    "path": "^0.12.7"
+  }
+}
