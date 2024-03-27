@@ -5,6 +5,9 @@ import path from "path"
 import cookieParser from "cookie-parser"
 
 import { notFoundHandler, errorHandler } from "./middlewares/common/errorHandler.js"
+import inboxRouter from "./routers/inboxRouter.js"
+import loginRouter from "./routers/loginRouter.js"
+import usersRouter from "./routers/usersRouter.js"
 
 const app = express()
 dotenv.config()
@@ -19,6 +22,11 @@ app.use(express.urlencoded({ extended: true }))
 app.set("view engine", "ejs")
 app.use(express.static(path.dirname("public")))
 app.use(cookieParser(process.env.COOKIE_SECRET))
+
+// Routes
+app.use("/", loginRouter)
+app.use("/users", usersRouter)
+app.use("/inbox", inboxRouter)
 
 // Errors Handling
 app.use(notFoundHandler)
