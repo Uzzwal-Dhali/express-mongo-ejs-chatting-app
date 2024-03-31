@@ -23,9 +23,16 @@ img {
   .card {
     background: white;
     border-radius: 10px;
-    padding: 15px;
+    padding: 20px 15px;
     height: max-content;
     min-width: 90vw;
+    .title {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      color: #4d4d4d;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
     .left {
       display: none;
     }
@@ -95,6 +102,31 @@ img {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
+      .user {
+        font-family: "Inter", sans-serif;
+        .infos {
+          text-align: center;
+          .name {
+            font-size: 14px;
+            margin-bottom: 3px;
+          }
+          .email, .mobile {
+            font-size: 13px;
+            color: #4d4d4d;
+          }
+        }
+        .actions {
+          display: flex;
+          justify-content: center;
+          gap: 3px;
+          padding: 10px 0;
+          button {
+            border: none;
+            border-radius: 7px;
+            padding: 5px 10px;
+          }
+        }
+      }
     }
   }
 }

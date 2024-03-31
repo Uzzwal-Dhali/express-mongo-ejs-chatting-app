@@ -23,10 +23,17 @@ img {
 .container .card {
   background: white;
   border-radius: 10px;
-  padding: 15px;
+  padding: 20px 15px;
   height: -moz-max-content;
   height: max-content;
   min-width: 90vw;
+}
+.container .card .title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: #4d4d4d;
+  font-size: 18px;
+  margin-bottom: 15px;
 }
 .container .card .left {
   display: none;
@@ -96,4 +103,29 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+}
+.container .card .users .user {
+  font-family: "Inter", sans-serif;
+}
+.container .card .users .user .infos {
+  text-align: center;
+}
+.container .card .users .user .infos .name {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.container .card .users .user .infos .email, .container .card .users .user .infos .mobile {
+  font-size: 13px;
+  color: #4d4d4d;
+}
+.container .card .users .user .actions {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 0;
+}
+.container .card .users .user .actions button {
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
 }/*# sourceMappingURL=styles.css.map */
