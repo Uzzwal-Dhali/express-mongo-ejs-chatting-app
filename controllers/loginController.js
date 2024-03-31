@@ -1,7 +1,5 @@
 function getLogin(req, res, next) {
-  res.render("index", {
-    title: "Login Here"
-  })
+  res.render("index")
 }
 
 export { getLogin }

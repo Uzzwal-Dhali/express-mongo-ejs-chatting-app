@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 /* Common Styling */
 * {
@@ -5,6 +6,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
+
 .container {
   height: 100vh;
   width: 100vw;
@@ -17,25 +24,77 @@
     background: white;
     border-radius: 10px;
     padding: 15px;
+    height: max-content;
+    min-width: 90vw;
     .left {
       display: none;
     }
     .right {
-      padding: 5px 0;
+      padding: 15px 7px;
+      .title {
+        font-size: 22px;
+        color: #7c7c7c;
+        margin-bottom: 18px;
+        font-family: "Montserrat", sans-serif;
+      }
       form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        input {
-          width: max-content;
-          padding: 4px 9px;
-          font-size: 14px;
+        gap: 15px;
+        input, button {
+          padding: 10px 15px;
+          font-size: 16px;
           border-radius: 7px;
-          outline: none;
-          box-shadow: none;
-          border: 1px solid #c5c5c5;
+        }
+        .input_wrapper {
+          input {
+            width: 100%;
+            outline: none;
+            box-shadow: none;
+            border: 1px solid #aaaaaa;
+            color: #727272;
+            font-family: "Inter", sans-serif;
+          }
+          input.error {
+            border: 1px solid rgba(244, 74, 69, 0.6);
+          }
+          p.error {
+            font-family: "Inter", sans-serif;
+            font-size: 13px;
+            color: #aaaaaa;
+            margin-top: 3px;
+            margin-left: 5px;
+            color: rgb(244, 74, 69);
+          }
+        }
+        .button_wrapper {
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          button {
+            width: max-content;
+            background-color: rgb(29, 193, 157);
+            color: white;
+            border: none;
+            cursor: pointer;
+          }
+          .message {
+            font-size: 13px;
+            font-family: "Inter", sans-serif;
+            color: #4d4d4d;
+            font-weight: 400;
+            a {
+              text-decoration: none;
+              color: rgb(29, 193, 157);
+            }
+          }
         }
       }
+    }
+    .users {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
   }
 }

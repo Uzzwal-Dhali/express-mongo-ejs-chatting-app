@@ -24,9 +24,9 @@ app.use(express.static(path.dirname("public")))
 app.use(cookieParser(process.env.COOKIE_SECRET))
 
 // Routes
-app.use("/", loginRouter)
-app.use("/users", usersRouter)
-app.use("/inbox", inboxRouter)
+app.use("/", loginRouter);
+app.use("/users", usersRouter);
+app.use("/inbox", inboxRouter);
 
 // Errors Handling
 app.use(notFoundHandler)

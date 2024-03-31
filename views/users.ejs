@@ -4,8 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
+  <link rel="stylesheet" href="../public/res/scss/styles.css">
 </head>
 <body>
-  <h1>All users!!</h1>
+  <div class="container">
+    <div class="card">
+      <h1>All users!!</h1>
+      <div class="users">
+      <% users.forEach(function(user) { %>
+        <div class="user">
+          <img src="../public/uploads/avatars/<%= user.avatar %>" alt="">
+          <div class="name"><%= user.name %></div>
+          <div class="email"><%= user.email %></div>
+        </div>
+      <% }) %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,8 +1,16 @@
 import express from "express"
-import { getUsers } from "../controllers/usersController.js"
+import { check } from "express-validator"
+
+import { addUser, getRegisterView, getUsers } from "../controllers/usersController.js"
+import decorateHtmlResponses from "../middlewares/common/decorateHtmlResponses.js"
+import avatarUpload from "../middlewares/users/avatarUpload.js"
+import { userValidation, userValidationHandler } from "../middlewares/users/userValidation.js"
 
 const router = express.Router()
 
-router.get("/users", getUsers)
+router.get("/", decorateHtmlResponses("Users"), getUsers)
+router.post("/")
+router.get("/register", decorateHtmlResponses("Register"), getRegisterView)
+router.post("/register", avatarUpload, userValidation, userValidationHandler, addUser)
 
 export default router
