@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -26,12 +30,26 @@ img {
     padding: 20px 15px;
     height: max-content;
     min-width: 90vw;
-    .title {
-      font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      color: #4d4d4d;
-      font-size: 18px;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 15px;
+      .title {
+        font-family: "Raleway", sans-serif;
+        font-weight: 400;
+        color: #4d4d4d;
+        font-size: 18px;
+      }
+      .action {
+        .button {
+          border: none;
+          padding: 7px 12px;
+          background-color: rgb(29, 193, 157);
+          color: white;
+          border-radius: 7px;
+        }
+      }
     }
     .left {
       display: none;

@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  <link rel="stylesheet" href="../public/res/scss/styles.css">
-</head>
-<body>
-  <div class="container">
+<%- include("./layouts/header.ejs") %>
     <div class="card">
       <div class="left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est fuga ullam modi facilis aliquid sed, obcaecati deleniti aspernatur animi velit?</div>
       <div class="right">
         <div class="title">Login Here</div>
-        <form action="">
+        <form method="post" action="/">
           <div class="input_wrapper">
-            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Username" name="username" value="<%= data.username %>">
+            <% if(errors.username) { %>
+            <p class="error show"><%= errors.username.msg %></p>
+            <% } %>
           </div>
           <div class="input_wrapper">
-            <input type="password" placeholder="Your password">
+            <input
+              type="password"
+              placeholder="Your password"
+              name="password"
+            >
+            <% if(errors.password) { %>
+            <p class="error show"><%= errors.password.msg %></p>
+            <% } %>
           </div>
+
+          <% if (errors.common) { %>
+            <p class="error show"><%= errors.common.msg %></p>
+          <% } %>
 
           <div class="button_wrapper">
             <button>Login</button>

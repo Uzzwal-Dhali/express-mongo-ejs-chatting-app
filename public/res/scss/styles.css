@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -28,12 +32,24 @@ img {
   height: max-content;
   min-width: 90vw;
 }
-.container .card .title {
+.container .card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.container .card .header .title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   color: #4d4d4d;
   font-size: 18px;
-  margin-bottom: 15px;
+}
+.container .card .header .action .button {
+  border: none;
+  padding: 7px 12px;
+  background-color: rgb(29, 193, 157);
+  color: white;
+  border-radius: 7px;
 }
 .container .card .left {
   display: none;

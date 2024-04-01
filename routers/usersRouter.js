@@ -5,13 +5,13 @@ import { addUser, deleteUser, getRegisterView, getUsers } from "../controllers/u
 import decorateHtmlResponses from "../middlewares/common/decorateHtmlResponses.js"
 import avatarUpload from "../middlewares/users/avatarUpload.js"
 import { userValidation, userValidationHandler } from "../middlewares/users/userValidation.js"
+import { checkLogin } from "../middlewares/common/checkLogin.js"
 
 const router = express.Router()
 
-router.get("/", decorateHtmlResponses("Users"), getUsers)
-router.post("/")
-router.get("/register", decorateHtmlResponses("Register"), getRegisterView)
-router.post("/register", avatarUpload, userValidation, userValidationHandler, addUser)
-router.delete("/:id", deleteUser)
+router.get("/", decorateHtmlResponses("Users"), checkLogin, getUsers)
+router.get("/register", decorateHtmlResponses("Register"), checkLogin, getRegisterView)
+router.post("/register", checkLogin, avatarUpload, userValidation, userValidationHandler, addUser)
+router.delete("/:id", checkLogin, deleteUser)
 
 export default router

@@ -1,6 +1,11 @@
 <%- include('./layouts/header.ejs') %>
     <div class="card">
-      <h1 class="title">All users (<%= users.length %>)</h1>
+      <div class="header">
+        <h1 class="title">All users (<%= users.length %>)</h1>
+        <div class="action">
+          <a href="/users/register" class="button">Add New</a>
+        </div>
+      </div>
       <div class="users">
       <% users.forEach(function(user) { %>
         <div class="user" id="<%= user._id %>">
@@ -51,6 +56,7 @@
         document.getElementById(userId).remove();
       }
     }
+
   </script>
 </body>
 </html>
